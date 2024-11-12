@@ -1,0 +1,13 @@
+Source: https://github.com/macvaz/modern-data-stack/tree/master
+
+#Start all docker containers
+
+docker-compose up -d
+
+# Initialize the lakehouse
+
+docker-compose exec minio bash /opt/bin/init_lakehouse.sh
+
+# Execute trino CLI
+
+docker-compose exec trino trino
