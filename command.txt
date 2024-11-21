@@ -11,3 +11,10 @@ docker-compose exec minio bash /opt/bin/init_lakehouse.sh
 # Execute trino CLI
 
 docker-compose exec trino trino
+# to connect to mariadb which is our metastore
+
+docker exec -it mariadb bash
+
+mysql -uadmin -padmin
+
+use metastore_db;
